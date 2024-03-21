@@ -1,6 +1,7 @@
 const inputField = document.getElementById('validation-input');
 
-  inputField.onblur=function() {
+  
+  inputField.addEventListener('blur', function(){
     const inputValue = inputField.value.trim();
     const textLength=parseInt(inputField.getAttribute('data-length'),10)
     
@@ -12,5 +13,4 @@ const inputField = document.getElementById('validation-input');
         inputField.classList.remove("valid");
         inputField.classList.add("invalid");
     }
-    
-  };
+  })
