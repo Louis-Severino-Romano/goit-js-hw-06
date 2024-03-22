@@ -5,8 +5,8 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
-  const boxesContainer = document.getElementById('boxes');
-  boxesContainer.innerHTML = ''; // Clear existing boxes
+  const Myboxes = document.getElementById('boxes');
+  Myboxes.innerHTML = ''; 
   let size = 30;
   for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
@@ -14,25 +14,27 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     box.style.width = size + 'px';
     box.style.height = size + 'px';
-    boxesContainer.appendChild(box);
-    size += 10; // Increase size for next box
+    Myboxes.appendChild(box);
+    size += 10; 
   }
 }
-
-function destroyBoxes() {
-  const boxesContainer = document.getElementById('boxes');
-  boxesContainer.innerHTML = ''; // Clear all boxes
-}
-
-document.getElementById('createButton').addEventListener('click', function() {
-  const amount = document.getElementById('amountInput').value;
+let myBtn=document.querySelector('button[data-create]');
+myBtn.addEventListener('click',function(){
+  
+  const amount = document.querySelector('input[type="number"]').value;
   if (amount > 0) {
     createBoxes(amount);
   } else {
-    alert('Please enter a valid number greater than zero.');
+    alert('Please enter a number greater than zero.');
   }
-});
 
-document.getElementById('destroyButton').addEventListener('click', function() {
+});
+function destroyBoxes() {
+  const myBoxes = document.getElementById('boxes');
+  myBoxes.innerHTML = ''; 
+}
+
+
+document.querySelector('button[data-destroy]').addEventListener('click', function() {
   destroyBoxes();
 });
