@@ -4,12 +4,12 @@ let initialValue=0;
 
 let value=document.getElementById('value');
 value.innerText=initialValue;
-addBtn.onclick = function(){
+addBtn.addEventListener('click', function(){
     initialValue += 1;
     value.innerText=initialValue;
-}
+})
 
-minusBtn.onclick = function(){
-        initialValue -=1;
-        value.innerText=initialValue;
-   }
+minusBtn.addEventListener('click', function(){
+    initialValue -=1;
+    value.innerText=initialValue;
+})
