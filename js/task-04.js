@@ -10,9 +10,9 @@ addBtn.onclick = function(){
 }
 
 minusBtn.onclick = function(){
-    if(initialValue>0){
+    
         initialValue -=1;
         value.innerText=initialValue;
-    }
+    
 
 }
